@@ -1,5 +1,5 @@
 # About
-First assignment for the course Software Verifictaion Techniques, imparted by Universidad Carlos III de Madrid in Spring 2023. 
+First assignment for the course Software Verification Techniques, imparted by Universidad Carlos III de Madrid in Spring 2023. 
 Built by Laura Belizón Merchán, Carlos Carmona Ramos and Jorge Lázaro Ruiz.
 
 Development of simple Java methods to test them using JUnit with a Test-Driven Development approach.
