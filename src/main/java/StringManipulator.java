@@ -1,6 +1,6 @@
 public class StringManipulator {
     /**
-     * Method 07
+     * Method 07: Reverse a string
      * @param input string to reverse
      * @return the reversed string
      */
@@ -10,7 +10,7 @@ public class StringManipulator {
     }
 
     /**
-     * Method 08
+     * Method 08: Count the number of vowels in a string
      * @param input string to count vowels
      * @return the number of vowels in the string
      */
@@ -27,7 +27,7 @@ public class StringManipulator {
     }
 
     /**
-     * Method 09
+     * Method 09: Count the number of words in a string
      * @param input string to count words
      * @return the number of words in the string
      */
@@ -37,7 +37,7 @@ public class StringManipulator {
         }
         while (input.charAt(0) == ' ') {
             input = input.substring(1);
-            if (input == null || input.isEmpty()) {
+            if (input.isEmpty()) {
                 return 0;
             }
         }
