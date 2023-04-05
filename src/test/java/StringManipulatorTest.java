@@ -52,7 +52,8 @@ public class StringManipulatorTest {
                 Arguments.arguments(" now there is a space", 5),
                 Arguments.arguments("space at the end of the string ", 7),
                 Arguments.arguments(" ", 0),
-                Arguments.arguments("", 0)
+                Arguments.arguments("", 0),
+                Arguments.arguments("   hi    you  ", 2)
         );
     }
 

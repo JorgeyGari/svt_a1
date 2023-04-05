@@ -35,7 +35,7 @@ public class StringManipulator {
         if (input == null || input.isEmpty()) {
             return 0;
         }
-        if (input.charAt(0) == ' ') {
+        while (input.charAt(0) == ' ') {
             input = input.substring(1);
             if (input == null || input.isEmpty()) {
                 return 0;

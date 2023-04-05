@@ -4,9 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0d0e0dfb-4eb9-462e-bb1d-cb09c9f4c4a3" name="Changes" comment="Method 5 implemented and tested">
+    <list default="true" id="0d0e0dfb-4eb9-462e-bb1d-cb09c9f4c4a3" name="Changes" comment="Method 9 implemented and tested">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/StringManipulator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/StringManipulator.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/StringManipulatorTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/StringManipulatorTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -189,7 +188,14 @@
       <option name="project" value="LOCAL" />
       <updated>1680700772467</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Method 9 implemented and tested">
+      <created>1680718662227</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1680718662227</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -211,9 +217,11 @@
     <MESSAGE value="Method 3 implemented" />
     <MESSAGE value="Method 3 implemented with passing tests" />
     <MESSAGE value="Method 5 implemented and tested" />
-    <option name="LAST_COMMIT_MESSAGE" value="Method 5 implemented and tested" />
+    <MESSAGE value="Method 9 implemented and tested" />
+    <option name="LAST_COMMIT_MESSAGE" value="Method 9 implemented and tested" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/svt_a1$StringManipulatorTest.ic" NAME="StringManipulatorTest Coverage Results" MODIFIED="1680718920629" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
     <SUITE FILE_PATH="coverage/svt_a1$CalculatorTest.ic" NAME="CalculatorTest Coverage Results" MODIFIED="1678268963050" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
   </component>
 </project>
