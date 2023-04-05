@@ -21,9 +21,26 @@ public class StringManipulatorTest {
                 Arguments.arguments("a", "a")
         );
     }
-    @ParameterizedTest(name = "Reversing '{0}'")
+    @ParameterizedTest(name = "Reversing \"{0}\"")
     @MethodSource("StringsToReverse")
     public void method07Test(String input, String expected) {
         Assertions.assertEquals(expected, StringManipulator.reverseString(input));
+    }
+
+    /* Method 08 */
+    public static Stream<Arguments> StringsVowels() {
+        return Stream.of(
+                Arguments.arguments("Hello, world!", 3),
+                Arguments.arguments("Java", 2),
+                Arguments.arguments("AEIOU", 5),
+                Arguments.arguments("the elephant", 4),
+                Arguments.arguments("bcd", 0),
+                Arguments.arguments("AaEeIiOoUuAAeeIIooUUaaEEiiOOuu", 30),
+                Arguments.arguments("", 0));
+    }
+    @ParameterizedTest(name = "Counting vowels in \"{0}\"")
+    @MethodSource("StringsVowels")
+    public void method08Test(String input, int expected) {
+        Assertions.assertEquals(StringManipulator.countVowels(input), expected);
     }
 }
