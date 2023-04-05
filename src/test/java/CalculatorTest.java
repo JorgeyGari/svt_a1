@@ -77,7 +77,9 @@ public class CalculatorTest {
                 Arguments.arguments(5, 5, 1),
                 Arguments.arguments(8, 4, 2),
                 Arguments.arguments(10, 4, 2.5f),
-                Arguments.arguments(0, 3, 0)
+                Arguments.arguments(6, -2, -3),
+                Arguments.arguments(0, 3, 0),
+                Arguments.arguments(4, 0, Float.NaN)
         );
     }
 }

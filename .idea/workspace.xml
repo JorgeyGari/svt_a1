@@ -4,8 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0d0e0dfb-4eb9-462e-bb1d-cb09c9f4c4a3" name="Changes" comment="bumped JUnit version to 5.9.2">
-      <change beforePath="$PROJECT_DIR$/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
+    <list default="true" id="0d0e0dfb-4eb9-462e-bb1d-cb09c9f4c4a3" name="Changes" comment="Method 3 implemented">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Calculator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Calculator.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/CalculatorTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/CalculatorTest.java" afterDir="false" />
@@ -111,7 +110,7 @@
       <option name="presentableId" value="Default" />
       <updated>1678265658280</updated>
       <workItem from="1678265659721" duration="2324000" />
-      <workItem from="1680687033594" duration="3506000" />
+      <workItem from="1680687033594" duration="5748000" />
     </task>
     <task id="LOCAL-00001" summary="bumped JUnit version to 5.9.2">
       <created>1678265933667</created>
@@ -120,7 +119,14 @@
       <option name="project" value="LOCAL" />
       <updated>1678265933667</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Method 3 implemented">
+      <created>1680691024391</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1680691024393</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -139,7 +145,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="bumped JUnit version to 5.9.2" />
-    <option name="LAST_COMMIT_MESSAGE" value="bumped JUnit version to 5.9.2" />
+    <MESSAGE value="Method 3 implemented" />
+    <option name="LAST_COMMIT_MESSAGE" value="Method 3 implemented" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/svt_a1$CalculatorTest.ic" NAME="CalculatorTest Coverage Results" MODIFIED="1678268963050" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />

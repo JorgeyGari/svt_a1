@@ -8,6 +8,9 @@ public class Calculator {
     }
 
     public static float divideNumbers(int a, int b) {
+        if (b == 0) {
+            return Float.NaN;
+        }
         return (float) a /b;
     }
 }
