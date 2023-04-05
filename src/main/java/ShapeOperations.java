@@ -13,4 +13,28 @@ public class ShapeOperations {
         }
         return length * width;
     }
+
+    /**
+     * Method 16: Perimeter of a circle
+     *
+     * @param radius radius of circle
+     * @return the perimeter of the circle
+     * @throws IllegalArgumentException if radius is not positive
+     */
+    public static float perimeterCircle(float radius) {
+        return Float.NaN;
+    }
+
+    /**
+     * Method 17: Type of triangle
+     *
+     * @param sidea side a of the triangle
+     * @param sideb side b of the triangle
+     * @param sidec side c of the triangle
+     * @return the type of the triangle
+     * @throws IllegalArgumentException if any side is not positive
+     */
+    public static String typeTriangle(float sidea, float sideb, float sidec) {
+        return null;
+    }
 }
