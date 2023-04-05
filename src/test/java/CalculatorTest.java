@@ -31,6 +31,13 @@ public class CalculatorTest {
     public void method02Test(int a, int b, int expected){
         Assertions.assertEquals(expected, Calculator.addPositiveNumbers(a, b));
     }
+
+    @ParameterizedTest(name = "Checking if {0} / {1} = {2}")
+    @MethodSource("NumbersDivision")
+    public void method3Test(int a, int b, float expected) {
+        Assertions.assertEquals(expected, Calculator.divideNumbers(a, b));
+    }
+
     public static Stream<Arguments> NumbersSum() {
         return Stream.of(
                 Arguments.arguments(2, 1, 3),
@@ -61,6 +68,16 @@ public class CalculatorTest {
                 Arguments.arguments(0, 1, 1),
                 Arguments.arguments(1, 0, 1),
                 Arguments.arguments(1, 1, 2)
+        );
+    }
+
+    public static Stream<Arguments> NumbersDivision() {
+        return Stream.of(
+                Arguments.arguments(1, 1, 1),
+                Arguments.arguments(5, 5, 1),
+                Arguments.arguments(8, 4, 2),
+                Arguments.arguments(10, 4, 2.5f),
+                Arguments.arguments(0, 3, 0)
         );
     }
 }
