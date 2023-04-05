@@ -3,6 +3,9 @@ import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.Arguments;
 import org.junit.jupiter.params.provider.MethodSource;
+
+import java.util.Arrays;
+import java.util.List;
 import java.util.stream.Stream;
 
 import java.util.Random;
@@ -102,5 +105,24 @@ public class CalculatorTest {
     @MethodSource("NumbersSquareRoot")
     public void method04Test(int a, float expected) {
         Assertions.assertEquals(expected, Calculator.squareRoot(a));
+    }
+
+    public static Stream<Arguments> NumbersList() {
+        return Stream.of(
+                Arguments.arguments(Arrays.asList(2f), 2f),
+                Arguments.arguments(Arrays.asList(4f, 8f), 6f),
+                Arguments.arguments(Arrays.asList(6f, 6f), 6f),
+                Arguments.arguments(Arrays.asList(23.1f, 34.2f, 45.3f), 34.2f),
+                Arguments.arguments(Arrays.asList(8f, 9.3f, 2.6f), 6.63f),
+                Arguments.arguments(Arrays.asList(0f, 10f), 5f),
+                Arguments.arguments(Arrays.asList(5f, -5f), 0f)
+        );
+    }
+
+    @ParameterizedTest(name = "Checking the average of a list of numbers")
+    @MethodSource("NumbersList")
+    public void method05Test(List<Float> numbers, float expected) {
+        float actual = Calculator.listAverage(numbers);
+        Assertions.assertEquals(expected, actual, 0.01f);
     }
 }

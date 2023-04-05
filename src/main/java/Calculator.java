@@ -1,3 +1,5 @@
+import java.util.List;
+
 public class Calculator {
     public static int addNumbers(int a, int b) {
         System.out.printf("%d + %d", a, b);
@@ -20,5 +22,14 @@ public class Calculator {
 
     public static float squareRoot(int a) {
         return (float) Math.sqrt(a);
+    }
+
+    public static float listAverage(List<Float> numbers) {
+        float sum = 0;
+        for (float n : numbers) {
+            sum += n;
+        }
+        System.out.printf("size" + numbers.size());
+        return sum / numbers.size();
     }
 }
