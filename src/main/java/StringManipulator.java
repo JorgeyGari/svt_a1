@@ -25,4 +25,23 @@ public class StringManipulator {
         }
         return count;
     }
+
+    /**
+     * Method 09
+     * @param input string to count words
+     * @return the number of words in the string
+     */
+    public static int countWords(String input) {
+        if (input == null || input.isEmpty()) {
+            return 0;
+        }
+        while (input.charAt(0) == ' ') {
+            input = input.substring(1);
+            if (input == null || input.isEmpty()) {
+                return 0;
+            }
+        }
+        String[] words = input.split("\\s+");
+        return words.length;
+    }
 }

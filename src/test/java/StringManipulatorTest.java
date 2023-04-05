@@ -27,4 +27,23 @@ public class StringManipulatorTest {
     public void method08Test(String input, int expected) {
         Assertions.assertEquals(StringManipulator.countVowels(input), expected);
     }
+
+    /* Method 09 */
+    public static Stream<Arguments> StringsWords() {
+        return Stream.of(
+                Arguments.arguments("hello world", 2),
+                Arguments.arguments("this is a test", 4),
+                Arguments.arguments(" now there is a space", 5),
+                Arguments.arguments("space at the end of the string ", 7),
+                Arguments.arguments(" ", 0),
+                Arguments.arguments("", 0),
+                Arguments.arguments("   hi    you  ", 2)
+        );
+    }
+
+    @ParameterizedTest(name = "Checking the number of words in a string")
+    @MethodSource("StringsWords")
+    public void method09Test(String input, int expected) {
+        Assertions.assertEquals(expected, StringManipulator.countWords(input));
+    }
 }
