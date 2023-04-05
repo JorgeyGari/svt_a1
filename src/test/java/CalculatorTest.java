@@ -47,7 +47,7 @@ public class CalculatorTest {
 
     /* Method 02 */
     @Test
-    public void method02checkNegativeException() {
+    public void method02TestException() {
         Assertions.assertThrows(IllegalArgumentException.class, () -> Calculator.addPositiveNumbers(-1, 1));
         Assertions.assertThrows(IllegalArgumentException.class, () -> Calculator.addPositiveNumbers(1, -1));
         Assertions.assertThrows(IllegalArgumentException.class, () -> Calculator.addPositiveNumbers(-1, -1));
