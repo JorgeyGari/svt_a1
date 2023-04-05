@@ -67,7 +67,7 @@
       <recent name="" />
     </key>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Gradle.CalculatorTest.method04Test">
     <configuration name="CalculatorTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
@@ -92,11 +92,34 @@
         <extension name="coverage" sample_coverage="false" />
       </EXTENSION>
       <DebugAllEnabled>false</DebugAllEnabled>
-      <ForceTestExec>false</ForceTestExec>
+      <method v="2" />
+    </configuration>
+    <configuration name="CalculatorTest.method04Test" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value=":test" />
+            <option value="--tests" />
+            <option value="&quot;CalculatorTest.method04Test&quot;" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
       <method v="2" />
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Gradle.CalculatorTest.method04Test" />
         <item itemvalue="Gradle.CalculatorTest" />
       </list>
     </recent_temporary>
@@ -111,6 +134,7 @@
       <updated>1678265658280</updated>
       <workItem from="1678265659721" duration="2324000" />
       <workItem from="1680687033594" duration="5748000" />
+      <workItem from="1680693593448" duration="1493000" />
     </task>
     <task id="LOCAL-00001" summary="bumped JUnit version to 5.9.2">
       <created>1678265933667</created>

@@ -8,6 +8,7 @@ import java.util.stream.Stream;
 import java.util.Random;
 
 public class CalculatorTest {
+
     @Test
     public void method01Test1(){
         Random rand = new Random();
@@ -32,12 +33,6 @@ public class CalculatorTest {
         Assertions.assertEquals(expected, Calculator.addPositiveNumbers(a, b));
     }
 
-    @ParameterizedTest(name = "Checking if {0} / {1} = {2}")
-    @MethodSource("NumbersDivision")
-    public void method3Test(int a, int b, float expected) {
-        Assertions.assertEquals(expected, Calculator.divideNumbers(a, b));
-    }
-
     public static Stream<Arguments> NumbersSum() {
         return Stream.of(
                 Arguments.arguments(2, 1, 3),
@@ -46,6 +41,7 @@ public class CalculatorTest {
         );
     }
 
+    /* Method 02 */
     // Check if the method throws an exception when negative numbers are passed
     @Test
     public void method02checkNegativeException(){
@@ -71,6 +67,7 @@ public class CalculatorTest {
         );
     }
 
+    /* Method 03 */
     public static Stream<Arguments> NumbersDivision() {
         return Stream.of(
                 Arguments.arguments(1, 1, 1),
@@ -81,5 +78,29 @@ public class CalculatorTest {
                 Arguments.arguments(0, 3, 0),
                 Arguments.arguments(4, 0, Float.NaN)
         );
+    }
+
+    @ParameterizedTest(name = "Checking if {0} / {1} = {2}")
+    @MethodSource("NumbersDivision")
+    public void method3Test(int a, int b, float expected) {
+        Assertions.assertEquals(expected, Calculator.divideNumbers(a, b));
+    }
+
+    /* Method 04 */
+    public static Stream<Arguments> NumbersSquareRoot() {
+        return Stream.of(
+                Arguments.arguments(0, 0),
+                Arguments.arguments(1, 1),
+                Arguments.arguments(9, 3),
+                Arguments.arguments(81, 9),
+                Arguments.arguments(100, 10),
+                Arguments.arguments(-4, Float.NaN),
+                Arguments.arguments(-9, Float.NaN),
+                Arguments.arguments(-0, 0));
+    }
+    @ParameterizedTest(name = "Checking if the square root of {0} is {1}")
+    @MethodSource("NumbersSquareRoot")
+    public void method04Test(int a, float expected) {
+        Assertions.assertEquals(expected, Calculator.squareRoot(a));
     }
 }
