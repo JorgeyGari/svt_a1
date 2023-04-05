@@ -82,7 +82,7 @@ public class CalculatorTest {
 
     @ParameterizedTest(name = "Checking if {0} / {1} = {2}")
     @MethodSource("NumbersDivision")
-    public void method3Test(int a, int b, float expected) {
+    public void method03Test(int a, int b, float expected) {
         Assertions.assertEquals(expected, Calculator.divideNumbers(a, b));
     }
 
