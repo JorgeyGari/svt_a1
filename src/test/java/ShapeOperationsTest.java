@@ -60,7 +60,10 @@ public class ShapeOperationsTest {
                 Arguments.arguments(2, 2, 4, "isosceles"),
                 Arguments.arguments(4, 3, 4, "isosceles"),
                 Arguments.arguments(6, 1, 1, "isosceles"),
-                Arguments.arguments(3, 3, 3, "equilateral")
+                Arguments.arguments(3, 3, 3, "equilateral"),
+                Arguments.arguments(4.3f, 5, 4.2f, "scalene"),
+                Arguments.arguments(7.9f, 8, 7.9f, "isosceles"),
+                Arguments.arguments(4.1f, 4.1f, 4.1f, "equilateral")
         );
     }
 

@@ -38,6 +38,15 @@ public class ShapeOperations {
      * @throws IllegalArgumentException if any side is not positive
      */
     public static String typeTriangle(float sidea, float sideb, float sidec) {
-        return null;
+        if (sidea <= 0 || sideb <= 0 || sidec <= 0) {
+            throw new IllegalArgumentException("All sides must be positive");
+        }
+        if (sidea == sideb && sidea == sidec) {
+            return "equilateral";
+        }
+        if (sidea == sideb || sidea == sidec || sideb == sidec) {
+            return "isosceles";
+        }
+        return "scalene";
     }
 }
