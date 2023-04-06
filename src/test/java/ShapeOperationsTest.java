@@ -87,5 +87,6 @@ public class ShapeOperationsTest {
         Assertions.assertThrows(IllegalArgumentException.class, () -> ShapeOperations.typeTriangle(3, -1, 3));
         Assertions.assertThrows(IllegalArgumentException.class, () -> ShapeOperations.typeTriangle(2, 8, -2));
         Assertions.assertThrows(IllegalArgumentException.class, () -> ShapeOperations.typeTriangle(-9, 2, -1));
+        Assertions.assertThrows(IllegalArgumentException.class, () -> ShapeOperations.typeTriangle(-1, -1, -1));
     }
 }
