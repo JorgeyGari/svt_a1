@@ -21,8 +21,11 @@ public class ShapeOperations {
      * @return the perimeter of the circle
      * @throws IllegalArgumentException if radius is not positive
      */
-    public static float perimeterCircle(float radius) {
-        return Float.NaN;
+    public static double perimeterCircle(float radius) {
+        if (radius <= 0) {
+            throw new IllegalArgumentException("Radius must be positive");
+        }
+        return 2 * Math.PI * radius;
     }
 
     /**
