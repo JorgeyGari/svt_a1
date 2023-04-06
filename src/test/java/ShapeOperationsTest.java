@@ -29,4 +29,64 @@ public class ShapeOperationsTest {
         Assertions.assertThrows(IllegalArgumentException.class, () -> ShapeOperations.areaOfRectangle(1, 0));
         Assertions.assertThrows(IllegalArgumentException.class, () -> ShapeOperations.areaOfRectangle(0, -2));
     }
+
+    /* Method 16 */
+    public static Stream<Arguments> Circles() {
+        return Stream.of(
+                Arguments.arguments(2f, 12.57f),
+                Arguments.arguments(5f, 31.42f),
+                Arguments.arguments(1f, 6.28f),
+                Arguments.arguments(3.6f, 22.62f),
+                Arguments.arguments(0.4f, 2.51f)
+        );
+    }
+
+    @ParameterizedTest(name = "Checking the perimeter of a circle")
+    @MethodSource("Circles")
+    public void method16Test(float radius, float expected) {
+        Assertions.assertEquals(expected, ShapeOperations.perimeterCircle(radius), 0.01f);
+    }
+
+    @Test
+    public void method16TestExceptions() {
+        Assertions.assertThrows(IllegalArgumentException.class, () -> ShapeOperations.perimeterCircle(0));
+        Assertions.assertThrows(IllegalArgumentException.class, () -> ShapeOperations.perimeterCircle(-2));
+    }
+
+    /* Method 17 */
+    public static Stream<Arguments> Triangles() {
+        return Stream.of(
+                Arguments.arguments(1, 2, 3, "scalene"),
+                Arguments.arguments(2, 2, 4, "isosceles"),
+                Arguments.arguments(4, 3, 4, "isosceles"),
+                Arguments.arguments(6, 1, 1, "isosceles"),
+                Arguments.arguments(3, 3, 3, "equilateral"),
+                Arguments.arguments(4.3f, 5, 4.2f, "scalene"),
+                Arguments.arguments(7.9f, 8, 7.9f, "isosceles"),
+                Arguments.arguments(4.1f, 4.1f, 4.1f, "equilateral")
+        );
+    }
+
+    @ParameterizedTest(name = "Checking the type of triangle")
+    @MethodSource("Triangles")
+    public void method17Test(float sidea, float sideb, float sidec, String expected) {
+        Assertions.assertEquals(expected, ShapeOperations.typeTriangle(sidea, sideb, sidec));
+    }
+
+    @Test
+    public void method17TestExceptionsZeros() {
+        Assertions.assertThrows(IllegalArgumentException.class, () -> ShapeOperations.typeTriangle(0, 0, 0));
+        Assertions.assertThrows(IllegalArgumentException.class, () -> ShapeOperations.typeTriangle(0, 1, 2));
+        Assertions.assertThrows(IllegalArgumentException.class, () -> ShapeOperations.typeTriangle(1, 0, 3));
+        Assertions.assertThrows(IllegalArgumentException.class, () -> ShapeOperations.typeTriangle(2, 1, 0));
+        Assertions.assertThrows(IllegalArgumentException.class, () -> ShapeOperations.typeTriangle(0, 0, 5));
+    }
+    @Test
+    public void method17TestExceptionsNegatives() {
+        Assertions.assertThrows(IllegalArgumentException.class, () -> ShapeOperations.typeTriangle(-7, 3, 4));
+        Assertions.assertThrows(IllegalArgumentException.class, () -> ShapeOperations.typeTriangle(3, -1, 3));
+        Assertions.assertThrows(IllegalArgumentException.class, () -> ShapeOperations.typeTriangle(2, 8, -2));
+        Assertions.assertThrows(IllegalArgumentException.class, () -> ShapeOperations.typeTriangle(-9, 2, -1));
+        Assertions.assertThrows(IllegalArgumentException.class, () -> ShapeOperations.typeTriangle(-1, -1, -1));
+    }
 }

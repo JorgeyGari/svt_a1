@@ -63,4 +63,21 @@ public class StringManipulatorTest {
     public void method09Test(String input, int expected) {
         Assertions.assertEquals(expected, StringManipulator.countWords(input));
     }
+
+    /* Method 10 */
+    public static Stream<Arguments> StringsSpaces() {
+        return Stream.of(
+                Arguments.arguments("hello world", "helloworld"),
+                Arguments.arguments("this is a test", "thisisatest"),
+                Arguments.arguments("  another   test   ", "anothertest"),
+                Arguments.arguments("    ", ""),
+                Arguments.arguments("", "")
+        );
+    }
+
+    @ParameterizedTest(name = "Checking there are no whitespaces")
+    @MethodSource("StringsSpaces")
+    public void method10Test(String input, String expected) {
+        Assertions.assertEquals(expected, StringManipulator.removeSpaces(input));
+    }
 }

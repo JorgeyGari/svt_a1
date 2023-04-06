@@ -1,3 +1,5 @@
+import java.util.stream.Stream;
+
 public class StringManipulator {
     /**
      * Method 07: Reverse a string
@@ -43,5 +45,17 @@ public class StringManipulator {
         }
         String[] words = input.split("\\s+");
         return words.length;
+    }
+
+    /**
+     * Method 10: Remove whitespaces from string
+     * @param input string to remove whitespaces
+     * @return the string without the whitespaces
+     */
+    public static String removeSpaces(String input) {
+        if (input.isEmpty()) {
+            return input;
+        }
+        return input.replaceAll("\\s", "");
     }
 }
