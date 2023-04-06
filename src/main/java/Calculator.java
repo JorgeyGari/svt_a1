@@ -45,8 +45,8 @@ public class Calculator {
      * @param a number
      * @return the square root of 'a' or NaN if 'a' is negative
      */
-    public static float squareRoot(int a) {
-        return (float) Math.sqrt(a);
+    public static double squareRoot(double a) {
+        return Math.sqrt(a);
     }
 
     /**

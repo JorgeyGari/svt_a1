@@ -12,6 +12,7 @@ import java.util.Random;
 
 public class CalculatorTest {
 
+    /* Method 01 */
     @Test
     public void method01Test1() {
         Random rand = new Random();
@@ -30,8 +31,8 @@ public class CalculatorTest {
         Assertions.assertEquals(expected, Calculator.addNumbers(a, b));
     }
 
+    /* Method 02 */
     @ParameterizedTest(name = "Checking if {0} + {1} = {2}")
-
     @MethodSource("positiveNumbers")
     public void method02Test(int a, int b, int expected) {
         Assertions.assertEquals(expected, Calculator.addPositiveNumbers(a, b));
@@ -45,7 +46,6 @@ public class CalculatorTest {
         );
     }
 
-    /* Method 02 */
     @Test
     public void method02TestException() {
         Assertions.assertThrows(IllegalArgumentException.class, () -> Calculator.addPositiveNumbers(-1, 1));
@@ -90,15 +90,18 @@ public class CalculatorTest {
                 Arguments.arguments(1, 1),
                 Arguments.arguments(9, 3),
                 Arguments.arguments(81, 9),
+                Arguments.arguments(2, 1.4142135623730951),
+                Arguments.arguments(0.25, 0.5),
+                Arguments.arguments(0.01, 0.1),
                 Arguments.arguments(100, 10),
-                Arguments.arguments(-4, Float.NaN),
-                Arguments.arguments(-9, Float.NaN),
+                Arguments.arguments(-4, Double.NaN),
+                Arguments.arguments(-9, Double.NaN),
                 Arguments.arguments(-0, 0));
     }
 
     @ParameterizedTest(name = "Checking if the square root of {0} is {1}")
     @MethodSource("NumbersSquareRoot")
-    public void method04Test(int a, float expected) {
+    public void method04Test(double a, double expected) {
         Assertions.assertEquals(expected, Calculator.squareRoot(a));
     }
 
