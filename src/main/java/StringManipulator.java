@@ -3,6 +3,7 @@ import java.util.stream.Stream;
 public class StringManipulator {
     /**
      * Method 07: Reverse a string
+     *
      * @param input string to reverse
      * @return the reversed string
      */
@@ -13,6 +14,7 @@ public class StringManipulator {
 
     /**
      * Method 08: Count the number of vowels in a string
+     *
      * @param input string to count vowels
      * @return the number of vowels in the string
      */
@@ -30,6 +32,7 @@ public class StringManipulator {
 
     /**
      * Method 09: Count the number of words in a string
+     *
      * @param input string to count words
      * @return the number of words in the string
      */
@@ -49,6 +52,7 @@ public class StringManipulator {
 
     /**
      * Method 10: Remove whitespaces from string
+     *
      * @param input string to remove whitespaces
      * @return the string without the whitespaces
      */
@@ -58,4 +62,27 @@ public class StringManipulator {
         }
         return input.replaceAll("\\s", "");
     }
+
+    /**
+     * Method 11
+     */
+    public static boolean isPalindrome(String str) {
+        String reversed = new StringBuilder(str).reverse().toString();
+        return str.equalsIgnoreCase(reversed);
+    }
+
+    //method 12
+    public static String reverseWords(String input) {
+        String[] words  = input.split("\\s+");
+        StringBuilder reversed = new StringBuilder();
+        for (int i = words.length - 1; i >= 0; i--) {
+                reversed.append(words[i]);
+            if (i != 0) {
+                reversed.append(" ");
+            }
+        }
+        System.out.println("OUT OF THE FOR");
+        return reversed.toString();
+    }
+
 }

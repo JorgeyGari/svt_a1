@@ -7,9 +7,9 @@ public class Calculator {
      * @param b second number
      * @return the sum of a and b
      */
-    public static int addNumbers(int a, int b) {
-        System.out.printf("%d + %d", a, b);
-        return a + b;
+    public static float addNumbers(float a, float b) {
+        float sum = a + b;
+        return sum;
     }
 
     /**

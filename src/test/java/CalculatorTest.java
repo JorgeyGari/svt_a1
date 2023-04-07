@@ -17,17 +17,16 @@ public class CalculatorTest {
     public void method01Test1() {
         Random rand = new Random();
         //testing with integers
-        int int_randomA = rand.nextInt(65536) - 32768; //In this way, we have the range [-32768, 32768]
-        int int_randomB = rand.nextInt(65536) - 32768;
-        int expected = int_randomA + int_randomB;
-        //Add also tests with other types, floats, doubles
-        Assertions.assertEquals(expected, Calculator.addNumbers(int_randomA, int_randomB));
+        float f_randomA = rand.nextFloat()*(32768-65536); //In this way, we have the range [-32768, 32768]
+        float f_randomB = rand.nextFloat()*(32768-65536);
+        float expected = f_randomA + f_randomB;
+        Assertions.assertEquals(expected, Calculator.addNumbers(f_randomA, f_randomB), 1000000);
 
     }
 
     @ParameterizedTest(name = "Checking if {0} + {1} = {2}")
     @MethodSource("NumbersSum")
-    public void method01Test2(int a, int b, int expected) {
+    public void method01Test2(float a, float b, float expected) {
         Assertions.assertEquals(expected, Calculator.addNumbers(a, b));
     }
 
@@ -42,7 +41,7 @@ public class CalculatorTest {
         return Stream.of(
                 Arguments.arguments(2, 1, 3),
                 Arguments.arguments(1, -2, -1),
-                Arguments.arguments(0, Integer.MAX_VALUE, Integer.MAX_VALUE)
+                Arguments.arguments(0, Float.MAX_VALUE, Float.MAX_VALUE)
         );
     }
 

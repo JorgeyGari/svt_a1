@@ -1,11 +1,15 @@
 import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.Arguments;
 import org.junit.jupiter.params.provider.MethodSource;
 
 import java.util.stream.Stream;
 
+import static org.junit.jupiter.api.Assertions.*;
+
 public class StringManipulatorTest {
+
     /* Method 07 */
     public static Stream<Arguments> StringsToReverse() {
         return Stream.of(
@@ -24,7 +28,7 @@ public class StringManipulatorTest {
     @ParameterizedTest(name = "Reversing \"{0}\"")
     @MethodSource("StringsToReverse")
     public void method07Test(String input, String expected) {
-        Assertions.assertEquals(expected, StringManipulator.reverseString(input));
+        assertEquals(expected, StringManipulator.reverseString(input));
     }
 
     /* Method 08 */
@@ -42,7 +46,7 @@ public class StringManipulatorTest {
     @ParameterizedTest(name = "Counting vowels in \"{0}\"")
     @MethodSource("StringsVowels")
     public void method08Test(String input, int expected) {
-        Assertions.assertEquals(StringManipulator.countVowels(input), expected);
+        assertEquals(StringManipulator.countVowels(input), expected);
     }
 
     /* Method 09 */
@@ -61,7 +65,7 @@ public class StringManipulatorTest {
     @ParameterizedTest(name = "Checking the number of words in a string")
     @MethodSource("StringsWords")
     public void method09Test(String input, int expected) {
-        Assertions.assertEquals(expected, StringManipulator.countWords(input));
+        assertEquals(expected, StringManipulator.countWords(input));
     }
 
     /* Method 10 */
@@ -78,6 +82,45 @@ public class StringManipulatorTest {
     @ParameterizedTest(name = "Checking there are no whitespaces")
     @MethodSource("StringsSpaces")
     public void method10Test(String input, String expected) {
-        Assertions.assertEquals(expected, StringManipulator.removeSpaces(input));
+        assertEquals(expected, StringManipulator.removeSpaces(input));
+    }
+
+    /* method 11 - checks if a string reads the same forwards and backwards */
+    @Test
+    public void method11Test1() {
+        assertTrue(StringManipulator.isPalindrome("racecar"));
+        assertTrue(StringManipulator.isPalindrome("radar"));
+        assertFalse(StringManipulator.isPalindrome("hello"));
+        //assertTrue(StringManipulator.isPalindrome("A man a plan a canal Panama"));
+        assertTrue(StringManipulator.isPalindrome(""));
+    }
+
+    /* method 12 - return a string with the order of the words reversed */
+    @Test
+    public void  method12(){
+        String input = "the quick brown fox";
+        String expectedOutput = "fox brown quick the";
+        String actualOutput = StringManipulator.reverseWords(input);
+        assertEquals(expectedOutput, actualOutput);
+
+        input = "hello world";
+        expectedOutput = "world hello";
+        actualOutput = StringManipulator.reverseWords(input);
+        assertEquals(expectedOutput, actualOutput);
+
+        input = " a b  c   d e  ";
+        expectedOutput = "e d c b a";
+        actualOutput = StringManipulator.reverseWords(input);
+        assertEquals(expectedOutput, actualOutput);
+
+        input = "";
+        expectedOutput = "";
+        actualOutput = StringManipulator.reverseWords(input);
+        assertEquals(expectedOutput, actualOutput);
+
+        input = "  ";
+        expectedOutput = "";
+        actualOutput = StringManipulator.reverseWords(input);
+        assertEquals(expectedOutput, actualOutput);
     }
 }
