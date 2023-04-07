@@ -1,4 +1,5 @@
 import java.time.DateTimeException;
+import java.time.DayOfWeek;
 import java.time.LocalDate;
 import java.time.temporal.ChronoUnit;
 
@@ -46,6 +47,23 @@ public class DateAndTime {
         } catch (DateTimeException e) {
             throw new DateTimeException("Dates cannot have negative values" + e.getMessage());
         }
+    }
 
+    /**
+     * Method 21: Check if a date falls on a weekend
+     *
+     * @param date date to check
+     * @return true if the date falls in a weekend, false otherwise
+     * @throws IllegalArgumentException if the date is prior to October 15th, 1582
+     * @throws IllegalArgumentException if the date is null
+     * @throws DateTimeException if the date is invalid (day or month are not in the correct range)
+     */
+
+    public static boolean checkWeekend(LocalDate date) {
+        if (date == null) {
+            throw new IllegalArgumentException("Date cannot be null");
+        }
+        DayOfWeek day = date.getDayOfWeek();
+        return day == DayOfWeek.SATURDAY || day == DayOfWeek.SUNDAY;
     }
 }
