@@ -63,7 +63,15 @@ public class DateAndTime {
         if (date == null) {
             throw new IllegalArgumentException("Date cannot be null");
         }
-        DayOfWeek day = date.getDayOfWeek();
-        return day == DayOfWeek.SATURDAY || day == DayOfWeek.SUNDAY;
+        System.out.printf("day: " + date.getDayOfMonth() + " month: " + date.getMonthValue() + " year: " + date.getYear() + "\n");
+        if (date.isBefore(LocalDate.of(1582, 10, 15))) {
+            throw new IllegalArgumentException("Date must be within the use of the Gregorian calendar");
+        }
+        try {
+            DayOfWeek day = date.getDayOfWeek();
+            return day == DayOfWeek.SATURDAY || day == DayOfWeek.SUNDAY;
+        } catch (DateTimeException e) {
+            throw new DateTimeException("Invalid date");
+        }
     }
 }

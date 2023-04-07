@@ -112,12 +112,12 @@ public class DateAndTimeTest {
 
     @Test
     public void method21TestExceptionsInvalid() {
-        Assertions.assertThrows(IllegalArgumentException.class, () -> DateAndTime.checkWeekend(LocalDate.of(2020, 0, 3)));
-        Assertions.assertThrows(IllegalArgumentException.class, () -> DateAndTime.checkWeekend(LocalDate.of(2020, 12, 0)));
-        Assertions.assertThrows(IllegalArgumentException.class, () -> DateAndTime.checkWeekend(LocalDate.of(2022, -3, 8)));
-        Assertions.assertThrows(IllegalArgumentException.class, () -> DateAndTime.checkWeekend(LocalDate.of(2021, 12, -3)));
-        Assertions.assertThrows(IllegalArgumentException.class, () -> DateAndTime.checkWeekend(LocalDate.of(2021, 2, 29)));
-        Assertions.assertThrows(IllegalArgumentException.class, () -> DateAndTime.checkWeekend(LocalDate.of(2022, 11, 31)));
-        Assertions.assertThrows(IllegalArgumentException.class, () -> DateAndTime.checkWeekend(LocalDate.of(2023, 13, 12)));
+        Assertions.assertThrows(DateTimeException.class, () -> DateAndTime.checkWeekend(LocalDate.of(2020, 0, 3)));
+        Assertions.assertThrows(DateTimeException.class, () -> DateAndTime.checkWeekend(LocalDate.of(2020, 12, 0)));
+        Assertions.assertThrows(DateTimeException.class, () -> DateAndTime.checkWeekend(LocalDate.of(2022, -3, 8)));
+        Assertions.assertThrows(DateTimeException.class, () -> DateAndTime.checkWeekend(LocalDate.of(2021, 12, -3)));
+        Assertions.assertThrows(DateTimeException.class, () -> DateAndTime.checkWeekend(LocalDate.of(2021, 2, 29)));
+        Assertions.assertThrows(DateTimeException.class, () -> DateAndTime.checkWeekend(LocalDate.of(2022, 11, 31)));
+        Assertions.assertThrows(DateTimeException.class, () -> DateAndTime.checkWeekend(LocalDate.of(2023, 13, 12)));
     }
 }
