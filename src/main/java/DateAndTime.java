@@ -63,7 +63,6 @@ public class DateAndTime {
         if (date == null) {
             throw new IllegalArgumentException("Date cannot be null");
         }
-        System.out.printf("day: " + date.getDayOfMonth() + " month: " + date.getMonthValue() + " year: " + date.getYear() + "\n");
         if (date.isBefore(LocalDate.of(1582, 10, 15))) {
             throw new IllegalArgumentException("Date must be within the use of the Gregorian calendar");
         }
