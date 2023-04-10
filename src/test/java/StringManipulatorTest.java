@@ -137,7 +137,7 @@ public class StringManipulatorTest {
                 Arguments.arguments("aaaabbbccddee", "abcde")
         );
     }
-        @ParameterizedTest
+        @ParameterizedTest(name= "Checking that duplicated characters are eliminated")
         @MethodSource("DuplicatesStrings")
         public void method13Tests(String input, String expectedOutput) {
             String actualOutput = StringManipulator.removeDuplicates(input);
@@ -152,7 +152,7 @@ public class StringManipulatorTest {
                 Arguments.arguments("  one two     three two one", "one two three")
         );
     }
-    @ParameterizedTest
+    @ParameterizedTest(name= "Checking that duplicated words are eliminated")
     @MethodSource("DuplicatedWords")
     public void method14Tests(String input, String expectedOutput) {
         String actualOutput = StringManipulator.removeDuplicateWords(input);
