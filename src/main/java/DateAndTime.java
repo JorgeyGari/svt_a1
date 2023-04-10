@@ -1,7 +1,9 @@
 import java.time.DateTimeException;
 import java.time.DayOfWeek;
 import java.time.LocalDate;
+import java.time.format.TextStyle;
 import java.time.temporal.ChronoUnit;
+import java.util.Locale;
 
 public class DateAndTime {
 
@@ -73,4 +75,16 @@ public class DateAndTime {
             throw new DateTimeException("Invalid date");
         }
     }
+
+    /**
+     * Method 22
+     */
+    public static String getDayOfTheWeek(LocalDate date) {
+        if (date == null) {
+            throw new IllegalArgumentException("Date cannot be null");
+        }
+        DayOfWeek dayOfWeek = date.getDayOfWeek();
+        return dayOfWeek.getDisplayName(TextStyle.FULL, Locale.getDefault());
+    }
+
 }

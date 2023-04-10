@@ -8,8 +8,7 @@ public class Calculator {
      * @return the sum of a and b
      */
     public static float addNumbers(float a, float b) {
-        float sum = a + b;
-        return sum;
+        return a + b;
     }
 
     /**

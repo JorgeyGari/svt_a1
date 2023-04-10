@@ -5,7 +5,10 @@ import org.junit.jupiter.params.provider.Arguments;
 import org.junit.jupiter.params.provider.MethodSource;
 
 import java.time.DateTimeException;
+import java.time.DayOfWeek;
 import java.time.LocalDate;
+import java.time.format.TextStyle;
+import java.util.Locale;
 import java.util.stream.Stream;
 
 public class DateAndTimeTest {
@@ -119,5 +122,28 @@ public class DateAndTimeTest {
         Assertions.assertThrows(DateTimeException.class, () -> DateAndTime.checkWeekend(LocalDate.of(2021, 2, 29)));
         Assertions.assertThrows(DateTimeException.class, () -> DateAndTime.checkWeekend(LocalDate.of(2022, 11, 31)));
         Assertions.assertThrows(DateTimeException.class, () -> DateAndTime.checkWeekend(LocalDate.of(2023, 13, 12)));
+    }
+    
+    //method 22
+    @Test
+    public void method22Test() {
+        LocalDate date = LocalDate.of(2023, 4, 12);
+        String expected = DayOfWeek.WEDNESDAY.getDisplayName(TextStyle.FULL, Locale.getDefault());
+        String actual = DateAndTime.getDayOfTheWeek(date);
+        Assertions.assertEquals(expected, actual);
+    }
+    @Test
+    public void testGetDayOfWeekWithNullDate() {
+        Assertions.assertThrows(IllegalArgumentException.class, () -> {
+            DateAndTime.getDayOfTheWeek(null);
+        });
+    }
+
+    @Test
+    public void testGetDayOfWeekWithLeapYear() {
+        LocalDate date = LocalDate.of(2024, 2, 29);
+        String expected = DayOfWeek.FRIDAY.getDisplayName(TextStyle.FULL, Locale.getDefault());
+        String actual = DateAndTime.getDayOfTheWeek(date);
+        Assertions.assertEquals(expected, actual);
     }
 }
