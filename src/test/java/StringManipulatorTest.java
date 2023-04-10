@@ -2,6 +2,7 @@ import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.Arguments;
+import org.junit.jupiter.params.provider.CsvSource;
 import org.junit.jupiter.params.provider.MethodSource;
 
 import java.util.stream.Stream;
@@ -97,9 +98,9 @@ public class StringManipulatorTest {
 
     /* method 12 - return a string with the order of the words reversed */
     @Test
-    public void  method12(){
-        String input = "the quick brown fox";
-        String expectedOutput = "fox brown quick the";
+    public void  method12Test(){
+        String input = "this is a test";
+        String expectedOutput = "test a is this";
         String actualOutput = StringManipulator.reverseWords(input);
         assertEquals(expectedOutput, actualOutput);
 
@@ -123,4 +124,39 @@ public class StringManipulatorTest {
         actualOutput = StringManipulator.reverseWords(input);
         assertEquals(expectedOutput, actualOutput);
     }
+
+    //method 13
+
+    public static Stream<Arguments> DuplicatesStrings() {
+        return Stream.of(
+                Arguments.arguments("hello world", "helo wrd"),
+                Arguments.arguments("abcde", "abcde"),
+                Arguments.arguments("abbcde", "abcde"),
+                Arguments.arguments("    ", " "),
+                Arguments.arguments("", ""),
+                Arguments.arguments("aaaabbbccddee", "abcde")
+        );
+    }
+        @ParameterizedTest
+        @MethodSource("DuplicatesStrings")
+        public void method13Tests(String input, String expectedOutput) {
+            String actualOutput = StringManipulator.removeDuplicates(input);
+            assertEquals(expectedOutput, actualOutput);
+        }
+    //method14
+    public static Stream<Arguments> DuplicatedWords() {
+        return Stream.of(
+                Arguments.arguments("hello world hello", "hello world"),
+                Arguments.arguments("hello world", "hello world"),
+                Arguments.arguments("", ""),
+                Arguments.arguments("  one two     three two one", "one two three")
+        );
+    }
+    @ParameterizedTest
+    @MethodSource("DuplicatedWords")
+    public void method14Tests(String input, String expectedOutput) {
+        String actualOutput = StringManipulator.removeDuplicateWords(input);
+        assertEquals(expectedOutput, actualOutput);
+    }
+
 }

@@ -86,5 +86,41 @@ public class StringManipulator {
         return reversed.toString();
     }
 
+    /**
+     * Method 13
+     */
+    public static String removeDuplicates(String input) {
+        StringBuilder result = new StringBuilder();
+        for (int i = 0; i < input.length(); i++) {
+            String currentChar = Character.toString(input.charAt(i));
+            if (result.indexOf(currentChar) < 0) { //this would mean that has not been recorded yet as a character of the string
+                result.append(currentChar);
+            }
+        }
+        return result.toString();
+    }
+
+    /**
+     * method 14
+     */
+    public static String removeDuplicateWords(String str) {
+        str = str.trim(); //to avoid if a blank space is leading the stringcan
+        String[] words = str.split("\\s+");
+        StringBuilder sb = new StringBuilder();
+        for (int i = 0; i < words.length; i++) {
+            String word = words[i];
+            boolean isDuplicate = false;
+            for (int j = 0; j < i; j++) {
+                if (words[j].equals(word)) {
+                    isDuplicate = true;
+                    break;
+                }
+            }
+            if (!isDuplicate) {
+                sb.append(word).append(" ");
+            }
+        }
+        return sb.toString().trim();
+    }
 
 }
