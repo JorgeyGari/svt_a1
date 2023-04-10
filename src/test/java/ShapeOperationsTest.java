@@ -89,4 +89,20 @@ public class ShapeOperationsTest {
         Assertions.assertThrows(IllegalArgumentException.class, () -> ShapeOperations.typeTriangle(-9, 2, -1));
         Assertions.assertThrows(IllegalArgumentException.class, () -> ShapeOperations.typeTriangle(-1, -1, -1));
     }
+
+    //method18
+    public static Stream<Arguments> DistancesArgs() {
+        return Stream.of(
+                Arguments.arguments(new ShapeOperations.Point(1,1),new ShapeOperations.Point(0,3), 2.2360679), //negative slope
+                Arguments.arguments(new ShapeOperations.Point(0,3),new ShapeOperations.Point(0,5.25f), 2.25), //same vertical plane -> difference of the y-coordinates
+                Arguments.arguments(new ShapeOperations.Point(0,3),new ShapeOperations.Point(0,3), 0), //same point
+                Arguments.arguments(new ShapeOperations.Point(1,4),new ShapeOperations.Point(4,1), 4.2426406) //positive slope
+                );
+    }
+    @ParameterizedTest(name = "Computing the distance between points")
+    @MethodSource("DistancesArgs")
+    void testDistanceBetweenPoints(ShapeOperations.Point p1, ShapeOperations.Point p2, double expected) {
+        double actual = ShapeOperations.distanceBetweenPoints(p1, p2);
+        Assertions.assertEquals(expected, actual, 0.0001);
+    }
 }

@@ -67,7 +67,10 @@ public class StringManipulator {
      * Method 11
      */
     public static boolean isPalindrome(String str) {
-        String reversed = new StringBuilder(str).reverse().toString();
+        String reversed = "";
+        for (int i = str.length() - 1; i >= 0; i--) {
+            reversed += str.charAt(i);
+        }
         return str.equalsIgnoreCase(reversed);
     }
 
@@ -76,37 +79,38 @@ public class StringManipulator {
      */
     public static String reverseWords(String input) {
         String[] words = input.trim().split("\\s+");
-        StringBuilder reversed = new StringBuilder();
+        String reversed = "";
         for (int i = words.length - 1; i >= 0; i--) {
-            reversed.append(words[i]);
-            if (i != 0) { //last word
-                reversed.append(" ");
+            reversed += words[i];
+            if (i != 0) {
+                reversed += " ";
             }
         }
-        return reversed.toString();
+        return reversed;
     }
+
 
     /**
      * Method 13
      */
     public static String removeDuplicates(String input) {
-        StringBuilder result = new StringBuilder();
+        String result = "";
         for (int i = 0; i < input.length(); i++) {
             String currentChar = Character.toString(input.charAt(i));
             if (result.indexOf(currentChar) < 0) { //this would mean that has not been recorded yet as a character of the string
-                result.append(currentChar);
+                result += currentChar;
             }
         }
-        return result.toString();
+        return result;
     }
 
     /**
      * method 14
      */
     public static String removeDuplicateWords(String str) {
-        str = str.trim(); //to avoid if a blank space is leading the stringcan
+        str = str.trim();
         String[] words = str.split("\\s+");
-        StringBuilder sb = new StringBuilder();
+        String result = "";
         for (int i = 0; i < words.length; i++) {
             String word = words[i];
             boolean isDuplicate = false;
@@ -117,10 +121,11 @@ public class StringManipulator {
                 }
             }
             if (!isDuplicate) {
-                sb.append(word).append(" ");
+                result += word + " ";
             }
         }
-        return sb.toString().trim();
+        return result.trim();
     }
+
 
 }

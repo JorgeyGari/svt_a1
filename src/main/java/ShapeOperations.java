@@ -49,4 +49,28 @@ public class ShapeOperations {
         }
         return "scalene";
     }
+
+    /**
+     * method 18
+     */
+    public static class Point {
+        private final float x, y;
+        public Point(float x, float y) {
+            this.x = x;
+            this.y = y;
+        }
+        public float getX() {
+            return x;
+        }
+        public float getY() {
+            return y;
+        }
+    }
+    public static double distanceBetweenPoints(Point p1, Point p2) {
+        double deltaX = p2.getX() - p1.getX();
+        double deltaY = p2.getY() - p1.getY();
+        double distance = Math.sqrt(deltaX * deltaX + deltaY * deltaY); //
+        return distance;
+    }
+
 }
