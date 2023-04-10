@@ -87,7 +87,7 @@ public class StringManipulatorTest {
 
     /* method 11 - checks if a string reads the same forwards and backwards */
     @Test
-    public void method11Test1() {
+    public void method11Test() {
         assertTrue(StringManipulator.isPalindrome("racecar"));
         assertTrue(StringManipulator.isPalindrome("radar"));
         assertFalse(StringManipulator.isPalindrome("hello"));

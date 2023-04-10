@@ -71,18 +71,20 @@ public class StringManipulator {
         return str.equalsIgnoreCase(reversed);
     }
 
-    //method 12
+    /**
+     * method 12
+     */
     public static String reverseWords(String input) {
-        String[] words  = input.split("\\s+");
+        String[] words = input.trim().split("\\s+");
         StringBuilder reversed = new StringBuilder();
         for (int i = words.length - 1; i >= 0; i--) {
-                reversed.append(words[i]);
-            if (i != 0) {
+            reversed.append(words[i]);
+            if (i != 0) { //last word
                 reversed.append(" ");
             }
         }
-        System.out.println("OUT OF THE FOR");
         return reversed.toString();
     }
+
 
 }

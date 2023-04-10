@@ -26,23 +26,22 @@ public class CalculatorTest {
 
     @ParameterizedTest(name = "Checking if {0} + {1} = {2}")
     @MethodSource("NumbersSum")
-    public void method01Test2(float a, float b, float expected) {
+    public void method01TestCases(float a, float b, float expected) {
         Assertions.assertEquals(expected, Calculator.addNumbers(a, b));
-    }
-
-    /* Method 02 */
-    @ParameterizedTest(name = "Checking if {0} + {1} = {2}")
-    @MethodSource("positiveNumbers")
-    public void method02Test(int a, int b, int expected) {
-        Assertions.assertEquals(expected, Calculator.addPositiveNumbers(a, b));
     }
 
     public static Stream<Arguments> NumbersSum() {
         return Stream.of(
                 Arguments.arguments(2, 1, 3),
                 Arguments.arguments(1, -2, -1),
-                Arguments.arguments(0, Float.MAX_VALUE, Float.MAX_VALUE)
+                Arguments.arguments(1, Float.MAX_VALUE, Float.MAX_VALUE)
         );
+    }
+    /* Method 02 */
+    @ParameterizedTest(name = "Checking if {0} + {1} = {2}")
+    @MethodSource("positiveNumbers")
+    public void method02Test(int a, int b, int expected) {
+        Assertions.assertEquals(expected, Calculator.addPositiveNumbers(a, b));
     }
 
     @Test
