@@ -64,7 +64,9 @@ public class StringManipulator {
     }
 
     /**
-     * Method 11
+     * Method 11: Check if a string is a palindrome
+     * @param str string to check
+     * @return true if the string is a palindrome, false otherwise
      */
     public static boolean isPalindrome(String str) {
         String reversed = "";
@@ -75,7 +77,9 @@ public class StringManipulator {
     }
 
     /**
-     * method 12
+     * Method 12: Reverse the words in a string
+     * @param input string to reverse
+     * @return the string with the words reversed
      */
     public static String reverseWords(String input) {
         String[] words = input.trim().split("\\s+");
@@ -91,7 +95,9 @@ public class StringManipulator {
 
 
     /**
-     * Method 13
+     * Method 13: Remove duplicate characters from a string
+     * @param input string to remove duplicates
+     * @return the string without the duplicate characters
      */
     public static String removeDuplicates(String input) {
         String result = "";
@@ -105,7 +111,9 @@ public class StringManipulator {
     }
 
     /**
-     * method 14
+     * Method 14: Remove duplicate words from a string
+     * @param str string to remove duplicates
+     * @return the string without the duplicate words
      */
     public static String removeDuplicateWords(String str) {
         str = str.trim();
