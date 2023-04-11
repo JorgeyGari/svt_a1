@@ -90,7 +90,7 @@ public class ShapeOperationsTest {
         Assertions.assertThrows(IllegalArgumentException.class, () -> ShapeOperations.typeTriangle(-1, -1, -1));
     }
 
-    //method18
+    /* Method 18 */
     public static Stream<Arguments> DistancesArgs() {
         return Stream.of(
                 Arguments.arguments(new ShapeOperations.Point(1,1),new ShapeOperations.Point(0,3), 2.2360679), //negative slope

@@ -86,7 +86,7 @@ public class StringManipulatorTest {
         assertEquals(expected, StringManipulator.removeSpaces(input));
     }
 
-    /* method 11 - checks if a string reads the same forwards and backwards */
+    /* Method 11 */
     @Test
     public void method11Test() {
         assertTrue(StringManipulator.isPalindrome("racecar"));
@@ -96,7 +96,7 @@ public class StringManipulatorTest {
         assertTrue(StringManipulator.isPalindrome(""));
     }
 
-    /* method 12 - return a string with the order of the words reversed */
+    /* Method 12 */
     @Test
     public void  method12Test(){
         String input = "this is a test";
@@ -125,8 +125,7 @@ public class StringManipulatorTest {
         assertEquals(expectedOutput, actualOutput);
     }
 
-    //method 13
-
+    /* Method 13 */
     public static Stream<Arguments> DuplicatesStrings() {
         return Stream.of(
                 Arguments.arguments("hello world", "helo wrd"),
@@ -143,7 +142,7 @@ public class StringManipulatorTest {
             String actualOutput = StringManipulator.removeDuplicates(input);
             assertEquals(expectedOutput, actualOutput);
         }
-    //method14
+    /* Method 14 */
     public static Stream<Arguments> DuplicatedWords() {
         return Stream.of(
                 Arguments.arguments("hello world hello", "hello world"),
@@ -158,5 +157,4 @@ public class StringManipulatorTest {
         String actualOutput = StringManipulator.removeDuplicateWords(input);
         assertEquals(expectedOutput, actualOutput);
     }
-
 }

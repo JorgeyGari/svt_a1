@@ -124,7 +124,7 @@ public class DateAndTimeTest {
         Assertions.assertThrows(DateTimeException.class, () -> DateAndTime.checkWeekend(LocalDate.of(2023, 13, 12)));
     }
     
-    //method 22
+    /* Method 22 */
     @Test
     public void method22Test() {
         LocalDate date = LocalDate.of(2023, 4, 12);
