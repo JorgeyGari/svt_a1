@@ -142,7 +142,7 @@ public class DateAndTimeTest {
     @Test
     public void testGetDayOfWeekWithLeapYear() {
         LocalDate date = LocalDate.of(2024, 2, 29);
-        String expected = DayOfWeek.FRIDAY.getDisplayName(TextStyle.FULL, Locale.getDefault());
+        String expected = DayOfWeek.THURSDAY.getDisplayName(TextStyle.FULL, Locale.getDefault());
         String actual = DateAndTime.getDayOfTheWeek(date);
         Assertions.assertEquals(expected, actual);
     }
