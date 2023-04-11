@@ -69,8 +69,8 @@ public class ShapeOperations {
     public static double distanceBetweenPoints(Point p1, Point p2) {
         double deltaX = p2.getX() - p1.getX();
         double deltaY = p2.getY() - p1.getY();
-        double distance = Math.sqrt(deltaX * deltaX + deltaY * deltaY); //
-        return distance;
+        return Math.sqrt(deltaX * deltaX + deltaY * deltaY);
+
     }
 
 }

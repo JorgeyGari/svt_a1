@@ -101,7 +101,7 @@ public class ShapeOperationsTest {
     }
     @ParameterizedTest(name = "Computing the distance between points")
     @MethodSource("DistancesArgs")
-    void testDistanceBetweenPoints(ShapeOperations.Point p1, ShapeOperations.Point p2, double expected) {
+    void method18Test(ShapeOperations.Point p1, ShapeOperations.Point p2, double expected) {
         double actual = ShapeOperations.distanceBetweenPoints(p1, p2);
         Assertions.assertEquals(expected, actual, 0.0001);
     }

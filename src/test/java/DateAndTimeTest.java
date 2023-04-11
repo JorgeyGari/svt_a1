@@ -133,14 +133,12 @@ public class DateAndTimeTest {
         Assertions.assertEquals(expected, actual);
     }
     @Test
-    public void testGetDayOfWeekWithNullDate() {
-        Assertions.assertThrows(IllegalArgumentException.class, () -> {
-            DateAndTime.getDayOfTheWeek(null);
-        });
+    public void Test22WithNullDate() {
+        Assertions.assertThrows(IllegalArgumentException.class, () -> DateAndTime.getDayOfTheWeek(null) );
     }
 
     @Test
-    public void testGetDayOfWeekWithLeapYear() {
+    public void Test22WithLeapYear() {
         LocalDate date = LocalDate.of(2024, 2, 29);
         String expected = DayOfWeek.THURSDAY.getDisplayName(TextStyle.FULL, Locale.getDefault());
         String actual = DateAndTime.getDayOfTheWeek(date);
