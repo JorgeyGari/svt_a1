@@ -44,11 +44,7 @@ public class DateAndTime {
         if (date2.isBefore(date1)) {
             throw new IllegalArgumentException("The second date cannot be before the first one");
         }
-        try {
-            return ChronoUnit.DAYS.between(date1, date2);
-        } catch (DateTimeException e) {
-            throw new DateTimeException("Dates cannot have negative values" + e.getMessage());
-        }
+        return ChronoUnit.DAYS.between(date1, date2);
     }
 
     /**
@@ -68,16 +64,16 @@ public class DateAndTime {
         if (date.isBefore(LocalDate.of(1582, 10, 15))) {
             throw new IllegalArgumentException("Date must be within the use of the Gregorian calendar");
         }
-        try {
-            DayOfWeek day = date.getDayOfWeek();
-            return day == DayOfWeek.SATURDAY || day == DayOfWeek.SUNDAY;
-        } catch (DateTimeException e) {
-            throw new DateTimeException("Invalid date");
-        }
+        DayOfWeek day = date.getDayOfWeek();
+        return day == DayOfWeek.SATURDAY || day == DayOfWeek.SUNDAY;
     }
 
     /**
-     * Method 22
+     * Method 22: Get the day of the week for a given date
+     * @param date date to check
+     * @return the day of the week for the given date
+     * @throws IllegalArgumentException if the date is null
+     * @throws DateTimeException if the date is invalid (day or month are not in the correct range)
      */
     public static String getDayOfTheWeek(LocalDate date) {
         if (date == null) {
